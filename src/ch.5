@@ -1,0 +1,52 @@
+public class SalaryManager {
+    public static void main(String[] args) {
+        SalaryManager salaryManager = new SalaryManager();
+        salaryManager.getMonthlySalary(20000000);
+        salaryManager.calculateTax(1666666.6666666667);
+        salaryManager.calculateNationalPension(1666666.6666666667);
+        salaryManager.calculateHealthInsurance(1666666.6666666667);
+
+
+
+
+    }
+    public double getMonthlySalary (int yearlySalary ) {
+
+        double monthlySalary = yearlySalary / 12.0;
+        System.out.println("월급은 "+monthlySalary+" 원");
+
+        double sum =  calculateTax(monthlySalary)+calculateNationalPension(monthlySalary)+calculateHealthInsurance(monthlySalary);
+        monthlySalary -= sum;
+        //TODO: Expected 1 arguments but found 0 무슨 뜻인지 번역해서 기록해두기.
+        //1개의 인수를 예상했지만 0개를 찾았습니다.
+
+        System.out.println("최종 월급은 "+monthlySalary+" 원");
+        return monthlySalary;
+
+    }
+    public double calculateTax(double monthSalary) {
+        double workTax = monthSalary*(12.5/100);
+        System.out.println("내야 할 근로소득세는 "+workTax+" 원");
+        return workTax;
+    }
+    public double calculateNationalPension(double monthSalary) {
+        double pension = monthSalary*(8.1/100);
+        System.out.println("내야 할 국민연금은 "+pension+" 원");
+        return pension;
+    }
+    public double calculateHealthInsurance(double monthSalary){
+        double HealthInsurance = monthSalary*(13.5/100);
+        System.out.println("내야 할 건강보혐료는 "+HealthInsurance+" 원");
+        return HealthInsurance;
+    }
+}
+
+/* 출력결과
+월급은 1666666.6666666667 원
+내야 할 근로소득세는 208333.33333333334 원
+내야 할 국민연금은 135000.0 원
+내야 할 건강보혐료는 225000.00000000003 원
+최종 월급은 1098333.3333333335 원
+내야 할 근로소득세는 208333.33333333334 원
+내야 할 국민연금은 135000.0 원
+내야 할 건강보혐료는 225000.00000000003 원 */
