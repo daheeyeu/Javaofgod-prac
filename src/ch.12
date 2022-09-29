@@ -1,0 +1,35 @@
+
+//MemberDTO클래스
+package inheritance;
+
+public class MemberDTO {
+	public String name;
+	public String phone;
+	public String email;
+	//이하생략
+
+}
+
+//Equals클래스
+package inheritance;
+
+public class Equals(){
+ public static void main(String[]args){
+	Equals thisObject = new Equals();
+	thisObject.equalMethod();
+
+}
+public void equalMethod(){
+	MemberDTO obj1 = new MemberDTO("Dahee");
+	MemberDTO obj2 = new MemberDTO("Dahee");
+if(obj1==obj2){
+		System.out.println("obj1 and obj2 is same");
+} else { 
+		System.out.println("obj1 and obj2 is different");
+		}
+	}
+
+}
+/*실행결과
+obj1 and obj2 is different
+```
