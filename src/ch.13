@@ -1,0 +1,29 @@
+package javapackage.enums;
+
+public class OverTimeManager {
+ public int getOverTimeAmount(OverTimeValues value){ 
+//OverTimeValues라는 enum 타입을 매개변수로 받고, 변수명은 value
+	int amount = 0;
+//야근수당을 리턴할 amount라는 int값 선언, 0을 기본값으로 선언
+	System.out.println(value);
+
+	switch(value){ //switch조건으로 value를 지정
+	case  THREE_HOUR; //각 case에는 OverTimeValues에 선언한 상수 값을 분기하도록 함
+   amount = 18000;
+	 break;
+  case FIVE_HOUR;
+   amount = 30000;
+   break;
+ case WEEKEND_FOUR_HOUR;
+   amount = 40000;
+   break;
+ case WEEKEND_EIGHT_HOUR;
+   amount = 60000;
+   break;
+	}
+
+return amount; //야근수당 값
+
+ }
+
+}
